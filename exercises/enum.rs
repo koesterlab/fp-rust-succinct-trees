@@ -1,3 +1,5 @@
+// Make me compile.
+
 enum WebEvent {
     PageLoad,
     PageUnload,
@@ -10,7 +12,7 @@ enum WebEvent {
 fn inspect(event: WebEvent) {
     match event {
         WebEvent::KeyPress(c) => println!("pressed '{}'.", c),
-        // implement all other variant of the enum with appropriate output
+        // implement all other variants of the enum with appropriate output
     }
 }
 
