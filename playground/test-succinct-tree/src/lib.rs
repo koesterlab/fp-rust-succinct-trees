@@ -17,7 +17,7 @@ pub struct LOUDS<L> {
     // Also see https://serde.rs/attributes.html.
     #[serde(with = "LOUDSBits")]
     rank_select: RankSelect,
-    label: Vec<L>
+    labels: Vec<L>
 }
 
 
