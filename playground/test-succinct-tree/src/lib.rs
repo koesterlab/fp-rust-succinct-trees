@@ -12,14 +12,14 @@ use bv::BitVec;
 #[derive(Serialize, Deserialize)]
 pub struct LOUDS<L> {
     // The type L is automatically constrained to implement Serialize/Deserialize
-    // If we don't want to serialize the whole RankSelect, we can create a Proxy
+    // If we don't want to serialize the whole RankSelect, we can create a proxy
     // struct LOUDSBits that only contains the bitvector. This proxy struct is used
     // for (de)serialization, and automatically converted into RankSelect with the implementation
     // of the From-Trait below.
     // Also see https://serde.rs/attributes.html.
     #[serde(with = "LOUDSBits")]
     rank_select: RankSelect,
-    label: Vec<L>
+    labels: Vec<L>
 }
 
 
