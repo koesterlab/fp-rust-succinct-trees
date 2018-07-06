@@ -4,6 +4,8 @@ extern crate serde; // 1.0.66
 extern crate bio;
 extern crate bv;
 
+pub mod louds;
+
 use bio::data_structures::rank_select::RankSelect;
 use bv::BitVec;
 
@@ -11,7 +13,7 @@ use bv::BitVec;
 pub struct LOUDS<L> {
     // The type L is automatically constrained to implement Serialize/Deserialize
     // If we don't want to serialize the whole RankSelect, we can create a Proxy
-    // struct LOUDSBits that only contains the bitvector. This proxy struct is used 
+    // struct LOUDSBits that only contains the bitvector. This proxy struct is used
     // for (de)serialization, and automatically converted into RankSelect with the implementation
     // of the From-Trait below.
     // Also see https://serde.rs/attributes.html.
